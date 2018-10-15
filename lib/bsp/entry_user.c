@@ -20,6 +20,8 @@
 #include <string.h>
 #include <sysctl.h>
 #include <uarths.h>
+#include "pin_cfg_priv.h"
+#include <stdio.h>
 
 #define PLL1_OUTPUT_FREQ 160000000UL
 #define PLL2_OUTPUT_FREQ 45158400UL
@@ -37,10 +39,8 @@ extern int os_entry(int core_id, int number_of_cores, int (*user_main)(int, char
 
 static void setup_clocks()
 {
-    sysctl_pll_enable(SYSCTL_PLL1);
+    system_set_cpu_frequency(400000000);
     sysctl_pll_set_freq(SYSCTL_PLL1, PLL1_OUTPUT_FREQ);
-
-    sysctl_pll_enable(SYSCTL_PLL2);
     sysctl_pll_set_freq(SYSCTL_PLL2, PLL2_OUTPUT_FREQ);
 }
 
@@ -77,6 +77,7 @@ void _init_bsp(int core_id, int number_of_cores)
         __libc_init_array();
         /* Init FPIOA */
         fpioa_init();
+        bsp_pin_setup();
         /* Setup clocks */
         setup_clocks();
         /* Init UART */

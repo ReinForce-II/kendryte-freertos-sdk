@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# include "encoding.h"
+# include <encoding.h>
 
 # define REGBYTES 8
 # define STKSHIFT 15
@@ -399,6 +399,16 @@ _fini:
   ret
   .size  _init, .-_init
   .size  _fini, .-_fini
+
+.global __register_frame_info
+.type   __register_frame_info, @function
+.global __deregister_frame_info
+.type   __deregister_frame_info, @function
+__register_frame_info:
+__deregister_frame_info:
+  ret
+  .size  __register_frame_info, .-__register_frame_info
+  .size  __deregister_frame_info, .-__deregister_frame_info
 
 .section ".tdata.begin"
 .globl _tdata_begin

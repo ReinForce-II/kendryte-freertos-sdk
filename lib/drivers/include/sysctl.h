@@ -16,7 +16,7 @@
 #define _DRIVER_SYSCTL_H
 
 #include <stdint.h>
-#include "platform.h"
+#include <platform.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -92,44 +92,6 @@ typedef enum _sysctl_dma_channel_t
     SYSCTL_DMA_CHANNEL_5,
     SYSCTL_DMA_CHANNEL_MAX
 } sysctl_dma_channel_t;
-
-typedef enum _sysctl_dma_select_t
-{
-    SYSCTL_DMA_SELECT_SSI0_RX_REQ,
-    SYSCTL_DMA_SELECT_SSI0_TX_REQ,
-    SYSCTL_DMA_SELECT_SSI1_RX_REQ,
-    SYSCTL_DMA_SELECT_SSI1_TX_REQ,
-    SYSCTL_DMA_SELECT_SSI2_RX_REQ,
-    SYSCTL_DMA_SELECT_SSI2_TX_REQ,
-    SYSCTL_DMA_SELECT_SSI3_RX_REQ,
-    SYSCTL_DMA_SELECT_SSI3_TX_REQ,
-    SYSCTL_DMA_SELECT_I2C0_RX_REQ,
-    SYSCTL_DMA_SELECT_I2C0_TX_REQ,
-    SYSCTL_DMA_SELECT_I2C1_RX_REQ,
-    SYSCTL_DMA_SELECT_I2C1_TX_REQ,
-    SYSCTL_DMA_SELECT_I2C2_RX_REQ,
-    SYSCTL_DMA_SELECT_I2C2_TX_REQ,
-    SYSCTL_DMA_SELECT_UART1_RX_REQ,
-    SYSCTL_DMA_SELECT_UART1_TX_REQ,
-    SYSCTL_DMA_SELECT_UART2_RX_REQ,
-    SYSCTL_DMA_SELECT_UART2_TX_REQ,
-    SYSCTL_DMA_SELECT_UART3_RX_REQ,
-    SYSCTL_DMA_SELECT_UART3_TX_REQ,
-    SYSCTL_DMA_SELECT_AES_REQ,
-    SYSCTL_DMA_SELECT_SHA_RX_REQ,
-    SYSCTL_DMA_SELECT_AI_RX_REQ,
-    SYSCTL_DMA_SELECT_FFT_RX_REQ,
-    SYSCTL_DMA_SELECT_FFT_TX_REQ,
-    SYSCTL_DMA_SELECT_I2S0_TX_REQ,
-    SYSCTL_DMA_SELECT_I2S0_RX_REQ,
-    SYSCTL_DMA_SELECT_I2S1_TX_REQ,
-    SYSCTL_DMA_SELECT_I2S1_RX_REQ,
-    SYSCTL_DMA_SELECT_I2S2_TX_REQ,
-    SYSCTL_DMA_SELECT_I2S2_RX_REQ,
-    SYSCTL_DMA_SELECT_I2S0_BF_DIR_REQ,
-    SYSCTL_DMA_SELECT_I2S0_BF_VOICE_REQ,
-    SYSCTL_DMA_SELECT_MAX
-} sysctl_dma_select_t;
 
 /**
  * @brief      System controller clock id
@@ -269,28 +231,6 @@ typedef enum _sysctl_reset_t
     SYSCTL_RESET_RTC,
     SYSCTL_RESET_MAX = 31
 } sysctl_reset_t;
-
-typedef enum _sysctl_power_bank
-{
-    SYSCTL_POWER_BANK0,
-    SYSCTL_POWER_BANK1,
-    SYSCTL_POWER_BANK2,
-    SYSCTL_POWER_BANK3,
-    SYSCTL_POWER_BANK4,
-    SYSCTL_POWER_BANK5,
-    SYSCTL_POWER_BANK6,
-    SYSCTL_POWER_BANK7,
-    SYSCTL_POWER_BANK_MAX,
-} sysctl_power_bank_t;
-
-/**
- * @brief      System controller reset control id
- */
-typedef enum _io_power_mode
-{
-    SYSCTL_POWER_V33,
-    SYSCTL_POWER_V18
-} sysctl_io_power_mode_t;
 
 /**
  * @brief       Git short commit id
